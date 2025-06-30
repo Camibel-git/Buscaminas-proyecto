@@ -1,17 +1,21 @@
-from casilla import Casilla
+from casilla import Casilla  # Importamos la clase base Casilla
+
 
 class Mina(Casilla):
-    def __init__(self, ubicacion, mina_activa=True):
-        super().__init__(ubicacion)
-        self.mina_activa = mina_activa
+    """clase que representa una casilla que contiene una mina en el juego Buscaminas.
+    Hereda de la clase abstracta Casilla.
+
+    Atributos heredados:
+        ubicacion: coordenadas de la casilla en formato 'fila,columna'
+        revelada: indica si la casilla ha sido descubierta
+        marca: puede ser None, "bandera" o "duda"""
+
+    def _mostrar_revelada(self):
+        """se implementa el metodo abstracto, devuelve la mina con emoji de bomba al seleccionarla"""
+        return "[💣]"  # Emoji de bomba para minas descubiertas
 
     def ejecutar_accion(self):
-        # Al revelar, desactiva la mina, marca como revelada y termina el juego
-        self.mina_activa = False
-        self.revelada = True
-        return False
-
-    def explotar(self):
-        # Igual que ejecutar_accion
-        self.mina_activa = False
+        """Define qué ocurre cuando el jugador interactúa con la mina."""
+        self.revelada = True  # Marca la casilla como revelada
+        # Retorno False indica que la mina explotó (pérdida del juego)
         return False
