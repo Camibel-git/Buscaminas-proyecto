@@ -6,8 +6,8 @@ import time  # Importamos time para el cronómetro
 
 def imprimir_bienvenida():
     """muestra la bienvenida e instrucciones al juego"""
-    print("=== BIENVENIDO A BUSCAMINAS ===")
-    print("Un juego de estrategia donde debes evitar las minas")
+    print("======= BIENVENIDO A BUSCAMINAS ======")
+    print(" Un juego de estrategia donde debes evitar las minas")
     print("\n=== INSTRUCCIONES DEL BUSCAMINAS ===")
     print("1. Objetivo: Revelar todas las casillas sin minas")
     print("2. Símbolos:")
